@@ -1,4 +1,4 @@
 #!/bin/bash
 
-USERID=$( id -u ec2user )
+USERID=$( id -u)
 echo "User ID is: $USER"
