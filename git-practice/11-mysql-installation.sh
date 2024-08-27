@@ -11,4 +11,13 @@ then
     exit 1  # Exit the script if not running as root
 fi
 
-dnf install git -y
+dnf list installed git
+
+if [ $? ne 0 ]
+then
+    echo "Git is not installed, going to install.."
+    dnf install git -y
+else
+    echo "Git is already installed"
+fi
+
