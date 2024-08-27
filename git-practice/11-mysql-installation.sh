@@ -3,11 +3,12 @@
 
 
 USERID=$(id -u)
-#echo "User ID is: $USER"
+#echo "User ID is: $USERID"
 
-if [ $USER -ne 0 ]
+if [ $USERID -ne 0 ]
 then
-    echo "Please run this scipt with root previleges"
+    echo "Please run this script with root privileges"
+    exit 1  # Exit the script if not running as root
 fi
 
 dnf install git -y
