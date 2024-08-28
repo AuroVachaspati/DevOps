@@ -38,20 +38,20 @@ fi
 
 
 
-# dnf list installed mysql
+dnf list installed mysql
 
-# if [ $? -ne 0 ]
-#  then
-#     echo "MYSQL is not installed, going to install"
-#     dnf install mysql -y
-#     if [ $? -ne 0 ]
-#     then 
-#         echo "MySQL is not installed, check for errors"
-#         exit 1
-#     else
-#         echo "mysql installed, enjoy"
-#     fi
-# else
-#     echo "mysql is already installed"
-# fi
+if [ $? -ne 0 ]
+ then
+    echo "MYSQL is not installed, going to install"
+    dnf install mysql -y
+    if [ $? -ne 0 ]
+    then 
+        echo "MySQL is not installed, check for errors"
+        exit 1
+    else
+        echo "mysql installed, enjoy"
+    fi
+else
+    echo "mysql is already installed"
+fi
 
