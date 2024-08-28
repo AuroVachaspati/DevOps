@@ -3,7 +3,18 @@
 
 
 USERID=$(id -u)
-#echo "User ID is: $USERID"
+echo "UserID is: $USERID"  # Debug line to check the value of USERID
+
+CHECK_ROOT(){
+    if [ $USERID -ne 0 ]
+    then
+        echo "Please run this script with root privileges"
+        exit 1  # Exit the script if not running as root
+    fi
+}
+
+CHECK_ROOT
+
 
 VALIDATE(){
     if [ $1 -ne 0 ]
@@ -15,11 +26,7 @@ VALIDATE(){
     fi        
 }
 
-if [ $USERID -ne 0 ]
-then
-    echo "Please run this script with root privileges"
-    exit 1  # Exit the script if not running as root
-fi
+
 
 
 dnf list installed git
