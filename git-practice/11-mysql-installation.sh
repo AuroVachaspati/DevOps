@@ -1,38 +1,43 @@
-USERID=$(id -u)
+#!/bin/bash
 
-if [ $USERID -ne 0 ]; then
+
+
+USERID=$(id -u)
+#echo "User ID is: $USERID"
+
+if [ $USERID -ne 0 ]
+then
     echo "Please run this script with root privileges"
     exit 1  # Exit the script if not running as root
 fi
 
-# Check if Git is installed
-dnf list installed git &> /dev/null
+dnf list installed git
 
-if [ $? -ne 0 ]; then
-    echo "Git is not installed, going to install..."
+if [ $? ne 0 ]
+then
+    echo "Git is not installed, going to install.."
     dnf install git -y
-    if [ $? -ne 0 ]; then
-        echo "Failed to install Git, check for errors"
-        exit 1
-    else
-        echo "Git installed successfully"
-    fi
+    if
 else
     echo "Git is already installed"
 fi
 
-# Check if MySQL is installed
-dnf list installed mysql &> /dev/null
 
-if [ $? -ne 0 ]; then
-    echo "MySQL is not installed, going to install..."
+
+dnf list installed mysql
+
+if [ $? -ne 0 ]
+ then
+    echo "MYSQL is not installed, going to install"
     dnf install mysql -y
-    if [ $? -ne 0 ]; then
-        echo "Failed to install MySQL, check for errors"
+    if [ $? -ne 0 ]
+    then 
+        echo "MySQL is not installed, check for errors"
         exit 1
     else
-        echo "MySQL installed successfully"
+        echo "mysql installed, enjoy"
     fi
 else
-    echo "MySQL is already installed"
+    echo "mysql is already installed"
 fi
+
