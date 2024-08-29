@@ -32,7 +32,7 @@
 
 
 # 15-loops.sh git mysql, nginix, etc..
-for package in $@  #all arguments passed to it
+for package in $@  mysql git nginix postfix#all arguments passed to it
 do 
     echo $package
 done
