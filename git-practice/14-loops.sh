@@ -15,7 +15,7 @@
 # }
 
 
-for i in I<20
+for i in {0..15}
 do    
     echo $i
 done
