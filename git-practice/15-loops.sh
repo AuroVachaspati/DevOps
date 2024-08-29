@@ -14,7 +14,6 @@ VALIDATE(){
     fi        
 }
 
-CHECK_ROOT
 
 
 # 15-loops.sh git mysql, nginix, etc..
